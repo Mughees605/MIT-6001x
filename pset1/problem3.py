@@ -10,7 +10,8 @@
 # Longest substring in alphabetical order is: abc
 
 
-s = 'ebtsnwdrmmowdljbotctsj'
+# Paste your code into this box 
+
 checkLongestSubstring = s[0]
 previousSubstring = ''
 count = 0
@@ -21,4 +22,7 @@ for i in range(len(s)):
         if len(checkLongestSubstring) > len(previousSubstring):
              previousSubstring = checkLongestSubstring
         checkLongestSubstring = s[i]
+if checkLongestSubstring == s:
+         previousSubstring = checkLongestSubstring
+print('Longest substring in alphabetical order is: ' + str(previousSubstring))
     
