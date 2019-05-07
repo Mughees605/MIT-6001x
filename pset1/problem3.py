@@ -10,14 +10,15 @@
 # Longest substring in alphabetical order is: abc
 
 
-s = 'abcbcd'
-longestSubstring = s[0]
+s = 'ebtsnwdrmmowdljbotctsj'
+checkLongestSubstring = s[0]
 previousSubstring = ''
 count = 0
 for i in range(len(s)):
-    if s[i] >= longestSubstring[-1]:
-        longestSubstring += s[i]
+    if s[i] >= checkLongestSubstring[-1] and i != 0:
+        checkLongestSubstring += s[i]
     else:
-        previousSubstring = longestSubstring
-        longestSubstring = s[i]
+        if len(checkLongestSubstring) > len(previousSubstring):
+             previousSubstring = checkLongestSubstring
+        checkLongestSubstring = s[i]
     
