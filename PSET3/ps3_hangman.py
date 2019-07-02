@@ -8,6 +8,7 @@
 # (so be sure to read the docstrings!)
 
 import random
+import string
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -83,6 +84,11 @@ def getAvailableLetters(lettersGuessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE...
+    alphabets_lower = ""
+    for letter in string.ascii_lowercase:
+      if letter not in lettersGuessed:
+        alphabets_lower = alphabets_lower + letter
+    return alphabets_lower
     
 
 def hangman(secretWord):
@@ -119,4 +125,3 @@ def hangman(secretWord):
 # secretWord = chooseWord(wordlist).lower()
 # hangman(secretWord)
 
-print(getGuessedWord('apple' , ['e', 'i', 'k', 'p', 'r', 's']))
