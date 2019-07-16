@@ -71,7 +71,16 @@ def getWordScore(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    count = 0
+    score = 0
+    for letter in word:
+        count = count + 1
+        score = score + SCRABBLE_LETTER_VALUES[letter]
+    score = score * len(word)
+    if count == n:
+        score = score + 50
+        
+    return score
 
 
 
@@ -258,3 +267,5 @@ def playGame(wordList):
 if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
+    getWordScore("ab",3)
+
