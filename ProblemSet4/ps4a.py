@@ -152,6 +152,11 @@ def updateHand(hand, word):
     returns: dictionary (string -> int)
     """
     # TO DO ... <-- Remove this comment when you code this function
+    updatedHandDict = hand.copy()
+    for letter in word:
+        if updatedHandDict.get(letter,0) != 0 :
+            updatedHandDict[letter] = updatedHandDict[letter] - 1
+    return updatedHandDict
 
 
 
@@ -267,5 +272,8 @@ def playGame(wordList):
 if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
-    getWordScore("ab",3)
+    hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
+    displayHand(hand)
+    hand = updateHand(hand, 'quail') # You implement this function!
+    print(hand)
 
